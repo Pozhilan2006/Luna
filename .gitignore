@@ -1,0 +1,47 @@
+# Runtime data — never commit
+data/
+*.db
+*.sqlite
+
+# FAISS indexes
+*.index
+*.faiss
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Electron
+node_modules/
+desktop/dist/
+desktop/dist-electron/
+desktop/.vite/
+*.tgz
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+uploads/
