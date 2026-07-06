@@ -1,1 +1,93 @@
 @import "tailwindcss";
+
+@theme {
+  /* Design Tokens mapped to Theme CSS variables */
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-surface-hover: var(--surface-hover-color);
+  --color-accent: var(--accent-color);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border-color);
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+:root {
+  /* Light Theme Variables */
+  --bg-color: #f9fafb;
+  --surface-color: #ffffff;
+  --surface-hover-color: #f3f4f6;
+  --accent-color: #7c3aed;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+:root.dark {
+  --bg-color: #030712;
+  --surface-color: #0b1120;
+  --surface-hover-color: #1e293b;
+  --accent-color: #a78bfa;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-color: #1e293b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #030712;
+    --surface-color: #0b1120;
+    --surface-hover-color: #1e293b;
+    --accent-color: #a78bfa;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #1e293b;
+  }
+}
+
+/* Base styles and defaults */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Frameless Window Custom Controls */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag-region {
+  -webkit-app-region: no-drag;
+}
+
+/* Standard Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
